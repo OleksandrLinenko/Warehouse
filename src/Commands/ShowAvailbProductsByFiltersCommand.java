@@ -8,10 +8,10 @@ package Commands;
  *
  * @author oleksandrlinenko
  */
-public class ShowAvailbProductsByFilters {
+public class ShowAvailbProductsByFiltersCommand {
 
-    public static ShowAvailbProductsByFilters create() {
-        return new ShowAvailbProductsByFilters();
+    public static ShowAvailbProductsByFiltersCommand create() {
+        return new ShowAvailbProductsByFiltersCommand();
     }
 
     public void handle() {
