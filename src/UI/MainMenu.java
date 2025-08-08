@@ -4,6 +4,10 @@
  */
 package UI;
 
+import Commands.LoadDataCommand;
+import Commands.SaveDataCommand;
+import Commands.SendProductCommand;
+import Commands.ShowAvailbProductsByFiltersCommand;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -54,13 +58,38 @@ public class MainMenu {
             case 0:
                 return true;
             case 1:
-
+                loadData();
+                break;
+            case 2:
+                showAvailbProductsByFilters();
+                break;
+            case 3:
+                sendProduct();
+                break;
+            case 4:
+                saveData();
                 break;
             default:
                 Message.create().show("Undefined option");
         }
 
         return false;
+    }
+    
+    public static void loadData() {
+        LoadDataCommand.create().handle();
+    }
+    
+    public static void showAvailbProductsByFilters() {
+        ShowAvailbProductsByFiltersCommand.create().handle();
+    }
+    
+    public static void sendProduct() {
+        SendProductCommand.create().handle();
+    }
+    
+    public static void saveData() {
+        SaveDataCommand.create().handle();
     }
 
 }
