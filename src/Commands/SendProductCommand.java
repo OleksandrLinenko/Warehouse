@@ -8,10 +8,10 @@ package Commands;
  *
  * @author oleksandrlinenko
  */
-public class SendProduct {
+public class SendProductCommand {
 
-    public static SendProduct create() {
-        return new SendProduct();
+    public static SendProductCommand create() {
+        return new SendProductCommand();
     }
 
     public void handle() {
