@@ -31,7 +31,7 @@ public class MainMenu {
     public static void menu() {
         Message.create().show("\nWarehouse\n");
         Message.create().show("1. Load products data from a file\n");
-        Message.create().show("2. List available products by parameters and availability\n");
+        Message.create().show("2. Show available products by parameters and availability\n");
         Message.create().show("3. Send product to the customer if they are available and match the customer's order requirements\n");
         Message.create().show("4. Save product data to a file after sending all orders\n");
         Message.create().show("0. End of program\n");
