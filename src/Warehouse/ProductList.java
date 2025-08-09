@@ -23,11 +23,11 @@ public class ProductList {
         products.add(product);
     }
 
-    public List<Product> getProduct(Availability availbility) {
-        List<Product> products = new ArrayList();
-        for (Product product : products) {
-            if (product.getAvailability().equals(availbility)) {
-                products.add(product);
+    public ProductList getProduct(Availability availbility, Type type) {
+        ProductList products = new ProductList();
+        for (Product product : products.getProducts()) {
+            if (product.getAvailability().equals(availbility) && product.getType().getType().equals(type.getType())) {
+                products.addProduct(product);
             }
         }
 
@@ -38,17 +38,6 @@ public class ProductList {
         List<Product> products = new ArrayList();
         for (Product product : products) {
             if (product.getSection().getName().equals(section.getName())) {
-                products.add(product);
-            }
-        }
-
-        return products;
-    }
-
-    public List<Product> getProduct(Type type) {
-        List<Product> products = new ArrayList();
-        for (Product product : products) {
-            if (product.getType().getType().equals(type.getType())) {
                 products.add(product);
             }
         }
