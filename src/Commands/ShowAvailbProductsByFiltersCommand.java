@@ -4,6 +4,13 @@
  */
 package Commands;
 
+import UI.Ask;
+import UI.ShowProductList;
+import Warehouse.Application;
+import Warehouse.Availability;
+import Warehouse.ProductList;
+import Warehouse.Type;
+
 /**
  *
  * @author oleksandrlinenko
@@ -15,6 +22,16 @@ public class ShowAvailbProductsByFiltersCommand {
     }
 
     public void handle() {
-
+        Type type = new Type(Ask.create().askString("Set item type: "));
+        int option = Ask.create().askInt("Set availability - 1 for instock items or 2 for soldout items: ");
+        Availability availability = null;
+        if (option == 1) {
+            availability = Availability.INSTOCK;
+        } else {
+            availability = Availability.SOLDOUT;
+        }
+        
+        ProductList products = Application.getInstance().getProducts().getProduct(availability, type);
+        ShowProductList.create().showProductList(products);
     }
 }
