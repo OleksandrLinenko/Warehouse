@@ -20,5 +20,4 @@ public enum Availability {
     public String getName() {
         return availability;
     }
-
 }

@@ -19,5 +19,4 @@ public class Type {
     public String getType() {
         return type;
     }
-
 }
