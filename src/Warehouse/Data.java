@@ -26,11 +26,11 @@ public class Data {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(";");
-                if (split.length == 5) {
+                if (split.length == 6) {
                     Type type = new Type(split[0]);
                     String name = split[1];
                     ParamList params = new ParamList();
-                    String[] secondSplit = split[2].split(":");
+                    String[] secondSplit = split[2].split(",");
                     for (int i = 0; i < secondSplit.length; i++) {
                         String[] splitParam = secondSplit[i].split(":");
                         params.addParam(new Parameter(splitParam[0], splitParam[1]));
