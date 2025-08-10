@@ -4,6 +4,11 @@
  */
 package Commands;
 
+import UI.Ask;
+import UI.ErrorMessage;
+import Warehouse.Data;
+import java.io.IOException;
+
 /**
  *
  * @author oleksandrlinenko
@@ -15,6 +20,11 @@ public class SaveDataCommand {
     }
 
     public void handle() {
-
+        try {
+            String path = Ask.create().askString("Set path to file: ");
+            Data.create().saveData(path);
+        } catch (IOException ex) {
+            ErrorMessage.create().show("Error while saving data");
+        }
     }
 }
