@@ -9,7 +9,6 @@ import UI.ShowProductList;
 import Warehouse.Application;
 import Warehouse.Availability;
 import Warehouse.ProductList;
-import Warehouse.Type;
 
 /**
  *
@@ -22,7 +21,7 @@ public class ShowAvailbProductsByFiltersCommand {
     }
 
     public void handle() {
-        Type type = new Type(Ask.create().askString("Set item type: "));
+        String name = Ask.create().askString("Set item name: ");
         int option = Ask.create().askInt("Set availability - 1 for instock items or 2 for soldout items: ");
         Availability availability = null;
         if (option == 1) {
@@ -30,8 +29,8 @@ public class ShowAvailbProductsByFiltersCommand {
         } else {
             availability = Availability.SOLDOUT;
         }
-        
-        ProductList products = Application.getInstance().getProducts().getProduct(availability, type);
+
+        ProductList products = Application.getInstance().getProducts().getProduct(availability, name);
         ShowProductList.create().showProductList(products);
     }
 }
