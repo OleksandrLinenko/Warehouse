@@ -23,10 +23,10 @@ public class ProductList {
         products.add(product);
     }
 
-    public ProductList getProduct(Availability availbility, Type type) {
+    public ProductList getProduct(Availability availbility, String name) {
         ProductList products = new ProductList();
         for (Product product : products.getProducts()) {
-            if (product.getAvailability().equals(availbility) && product.getType().getType().equals(type.getType())) {
+            if (product.getAvailability().equals(availbility) && product.getName().equals(name)) {
                 products.addProduct(product);
             }
         }

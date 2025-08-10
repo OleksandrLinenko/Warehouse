@@ -11,13 +11,15 @@ package Warehouse;
 public class Product {
 
     private Type type;
+    private String name;
     private ParamList params;
     private int quantity;
     private Section section;
     private Availability availability;
 
-    public Product(Type type, ParamList params, int quantity, Section section, Availability availability) {
+    public Product(Type type, String name, ParamList params, int quantity, Section section, Availability availability) {
         this.type = type;
+        this.name = name;
         this.params = params;
         this.quantity = quantity;
         this.section = section;
@@ -26,6 +28,10 @@ public class Product {
 
     public Type getType() {
         return type;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public ParamList getParams() {
@@ -48,6 +54,7 @@ public class Product {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("Type: %s; ", type.getType()));
+        sb.append(String.format("Name: %s", name));
         sb.append(String.format("parameters: %s; ", params.toString()));
         sb.append(String.format("quantity: %d; section: %s; availability: %s", quantity, section.getName(), availability.getName()));
         return sb.toString();
