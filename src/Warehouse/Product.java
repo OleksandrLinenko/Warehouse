@@ -50,6 +50,18 @@ public class Product {
         return availability;
     }
 
+    public void setQuantity(int n) {
+        quantity = quantity - n;
+    }
+
+    public void setAvailability() {
+        if (quantity > 0) {
+            availability = Availability.INSTOCK;
+        } else {
+            availability = Availability.INSTOCK;
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
